@@ -33,7 +33,7 @@ if __name__ == '__main__':
     draw_background()
 
     # TODO 1) Create an empty list of turtles
-
+    turtle_list = []
     # TODO 2) Create a new turtle and set its shape to 'turtle
 
     # TODO 3) Set the turtle's speed to 3
@@ -46,17 +46,25 @@ if __name__ == '__main__':
     # TODO 6) use a loop to repeat the previous instructions and create
     #  8 turtles lined up on the left side of the screen
     #  *HINT* click on the window to print the corresponding x, y location
-
+    for i in range(8):
+        bob = turtle.Turtle()
+        bob.shape('turtle')
+        bob.speed(3)
+        bob.penup()
+        bob.setx(-418)
+        bob.sety(190-i*55)
+        turtle_list.append(bob)
     # TODO 7) Move each turtle forward a random distance between 1 and 20
 
     # TODO 8) Create a loop to keep moving each turtle until a turtle
     #  crosses the finish line
     #  *HINT* click on the window to print the corresponding x, y location
-
+    while True:
+        for t in turtle_list:
+            t.forward(random.randint(1, 20))
     # TODO 9) When a turtle crosses the finish line, stop the race and
     #  indicate which turtle won the race.
 
     # EXTRA: Create different colors for each turtle and code a special
     # dance for the winning turtle!
-
-    turtle.done()
+turtle.done()
