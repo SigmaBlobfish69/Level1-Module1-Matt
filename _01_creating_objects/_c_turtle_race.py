@@ -59,11 +59,20 @@ if __name__ == '__main__':
     # TODO 8) Create a loop to keep moving each turtle until a turtle
     #  crosses the finish line
     #  *HINT* click on the window to print the corresponding x, y location
-    while True:
+    winner = None
+    number = 0
+    while winner is None:
+        number = 0
         for t in turtle_list:
+            number = number + 1
             t.forward(random.randint(1, 20))
+            if t.xcor() > 350:
+                winner = number
+                break
+
+    print("Turtle", winner, "wins!")
     # TODO 9) When a turtle crosses the finish line, stop the race and
-    #  indicate which turtle won the race.
+    #  indicate which turtle won the race
 
     # EXTRA: Create different colors for each turtle and code a special
     # dance for the winning turtle!
