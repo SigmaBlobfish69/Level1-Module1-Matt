@@ -1,7 +1,7 @@
 
 def setup():
     # 1. Use the size function to set the size of your sketch
-
+    sketch.size()
     # 2. Create 2 global variables for the background and the frog
     # using the loadImage("frog.png") function. For example:
     # global bg, frog
