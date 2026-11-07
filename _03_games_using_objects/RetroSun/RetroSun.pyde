@@ -72,10 +72,10 @@ def setup():
     
     for i in range(5):
         x = width/2 - sun_radius
-        y = 250 + (i * 35)
+        y = 250 + (i * 45)
         w = sun_radius * 2
-        h = 20
-
+        h = 40
+    
         sections.append(Rectangle(x, y, w, h))
 
 def draw():
@@ -191,7 +191,7 @@ class Rectangle:
         self.y = y
         self.w = w
         self.h = h
-    
+
     def draw(self):
         noStroke()
         fill(bg_color)
@@ -199,8 +199,8 @@ class Rectangle:
 
     def update(self):
         self.y -= 1
-        self.h -= 40.0 / (sun_radius + (sun_radius/4))
-        
-        if self.y < (height / 2) - (sun_radius / 4):
-            self.y = (height / 2) + sun_radius
+        self.h -= 0.16
+
+        if self.y + self.h < height / 2 - sun_radius:
+            self.y = height / 2 + sun_radius
             self.h = 40
